@@ -1,4 +1,4 @@
-# parametros_crud
+# evaluaciones_mongo_crud
 
 API CRUD para la gestión de información definida por la organización para las entidades de la universidad.
 
@@ -15,7 +15,7 @@ EVALUACION_MONGO_CRUD__USER=[usuario]
 EVALUACION_MONGO_CRUD__PASS=[password del usuario]
 EVALUACION_MONGO_CRUD__URLS=[url de bd]
 EVALUACION_MONGO_CRUD__RUNMODE=[modo de ejecución]
-EVALUACION_MONGO_CRUD__COLLECTION=[esquema de bd]
+EVALUACION_MONGO_CRUD__BDNAME=[esquema de bd]
 EVALUACION_MONGO_CRUD__HTTPPORT=[puerto]
 ```
 **NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con EVALUACION_MONGO_CRUD__...
