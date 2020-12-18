@@ -1,6 +1,6 @@
 # evaluaciones_mongo_crud
 
-API CRUD para la gestión de información definida por la organización para las entidades de la universidad.
+API CRUD para la gestion de formatos de evaluación para las entidades de la universidad.
 
 ## Especificaciones Técnicas
 
@@ -11,14 +11,14 @@ API CRUD para la gestión de información definida por la organización para las
 
 ### Variables de Entorno
 ```shell
-EVALUACION_MONGO_CRUD__USER=[usuario]
-EVALUACION_MONGO_CRUD__PASS=[password del usuario]
-EVALUACION_MONGO_CRUD__URLS=[url de bd]
-EVALUACION_MONGO_CRUD__RUNMODE=[modo de ejecución]
-EVALUACION_MONGO_CRUD__BDNAME=[esquema de bd]
-EVALUACION_MONGO_CRUD__HTTPPORT=[puerto]
+EVALUACIONES_MONGO_CRUD__USER=[usuario]
+EVALUACIONES_MONGO_CRUD__PASS=[password del usuario]
+EVALUACIONES_MONGO_CRUD__URLS=[url de bd]
+EVALUACIONES_MONGO_CRUD__RUNMODE=[modo de ejecución]
+EVALUACIONES_MONGO_CRUD__BDNAME=[nombre de bd]
+EVALUACIONES_MONGO_CRUD__HTTPPORT=[puerto]
 ```
-**NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con EVALUACION_MONGO_CRUD__...
+**NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con EVALUACIONES_MONGO_CRUD__...
 
 ### Ejecución del Proyecto
 ```shell
@@ -35,12 +35,12 @@ git pull origin develop && git checkout develop
 npm install
 
 # 5. Alimentar todas las variables de entorno que utiliza el proyecto.
-EVALUACION_MONGO_CRUD=8080 EVALUACION_MONGO_CRUD=127.0.0.1:27017 EVALUACION_MONGO_CRUD_SOME_VARIABLE=some_value nest run
+EVALUACIONES_MONGO_CRUD=8080 EVALUACIONES_MONGO_CRUD=127.0.0.1:27017 EVALUACIONES_MONGO_CRUD_SOME_VARIABLE=some_value nest run
 ```
 ### Ejecución Dockerfile
 ```shell
-# docker build --tag=evaluacion_mongo_crud . --no-cache
-# docker run -p 80:80 evaluacion_mongo_crud
+# docker build --tag=evaluaciones_mongo_crud . --no-cache
+# docker run -p 80:80 evaluaciones_mongo_crud
 ```
 
 ### Ejecución docker-compose
@@ -79,8 +79,8 @@ Pruebas unitarias
 
 This file is part of parametros_crud.
 
-evaluacion_mongo_crud is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+evaluaciones_mongo_crud is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-evaluacion_mongo_crud is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+evaluaciones_mongo_crud is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with parametros_crud. If not, see https://www.gnu.org/licenses/.
