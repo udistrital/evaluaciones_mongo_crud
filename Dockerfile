@@ -1,16 +1,11 @@
-FROM node:14 AS builder
+FROM node:current-alpine
+RUN apk update && apk add bash
+RUN apk add python3
+RUN apk add py3-pip
+RUN pip3 install awscli
+
 WORKDIR /
-COPY ./package.json ./
-RUN npm install
 COPY . .
-RUN npm run build
+RUN chmod +x ./ entrypoint.sh
 
-
-FROM node:14-alpine
-
-WORKDIR /
-
-COPY --from=builder ./node_modules ./node_modules
-COPY --from=builder dist/ .
-
-CMD [ "node",  "main" ]
+ENTRYPOINT ["/entrypoint.sh"]
