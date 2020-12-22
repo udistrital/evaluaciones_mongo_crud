@@ -6,19 +6,21 @@ API CRUD para la gestion de formatos de evaluación para las entidades de la uni
 
 ### Tecnologías Implementadas y Versiones
 * [NestJS](https://github.com/nestjs/nest)
+* [MongoDB](https://github.com/mongodb/mongo)
 * [Docker](https://docs.docker.com/engine/install/ubuntu/)
 * [Docker Compose](https://docs.docker.com/compose/)
 
 ### Variables de Entorno
 ```shell
-EVALUACIONES_MONGO_CRUD__USER=[usuario]
-EVALUACIONES_MONGO_CRUD__PASS=[password del usuario]
-EVALUACIONES_MONGO_CRUD__URLS=[url de bd]
-EVALUACIONES_MONGO_CRUD__RUNMODE=[modo de ejecución]
-EVALUACIONES_MONGO_CRUD__BDNAME=[nombre de bd]
-EVALUACIONES_MONGO_CRUD__HTTPPORT=[puerto]
+EVALUACIONES_MONGO_CRUD_USER=[Usuario de BD]
+EVALUACIONES_MONGO_CRUD_PASS=[Contraseña del usuario de BD]
+EVALUACIONES_MONGO_CRUD_HOST=[URL, Dominio o EndPoint de la BD]
+EVALUACIONES_MONGO_CRUD_PGPORT=[Puerto de la BD]
+EVALUACIONES_MONGO_CRUD_BDNAME=[Nombre de Base de Datos]
+EVALUACIONES_MONGO_CRUD_AUTH_DB=[Nombre de Base de Datos de Autenticación]
+EVALUACIONES_MONGO_CRUD_HTTP_PORT=[Puerto de exposición del API]
 ```
-**NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con EVALUACIONES_MONGO_CRUD__...
+**NOTA:** Las variables se pueden ver en el fichero config/configuration.ts y están identificadas con EVALUACIONES_MONGO_CRUD_...
 
 ### Ejecución del Proyecto
 ```shell
@@ -72,7 +74,7 @@ Pruebas unitarias
 ```
 
 ## Modelo de Datos
-[Modelo de Datos Parametros](/sql/modelo_evaluacion_mongo_crud.png)
+[Modelo de Datos Parametros](/sql/modelo_evaluaciones_mongo_crud.png)
 
 
 ## Licencia
