@@ -6,19 +6,21 @@ API CRUD para la gestion de formatos de evaluación para las entidades de la uni
 
 ### Tecnologías Implementadas y Versiones
 * [NestJS](https://github.com/nestjs/nest)
+* [MongoDB](https://github.com/mongodb/mongo)
 * [Docker](https://docs.docker.com/engine/install/ubuntu/)
 * [Docker Compose](https://docs.docker.com/compose/)
 
 ### Variables de Entorno
 ```shell
-EVALUACIONES_MONGO_CRUD_USER=[usuario]
-EVALUACIONES_MONGO_CRUD_PASS=[password del usuario]
-EVALUACIONES_MONGO_CRUD_URLS=[url de bd]
-EVALUACIONES_MONGO_CRUD_RUNMODE=[modo de ejecución]
-EVALUACIONES_MONGO_CRUD_BDNAME=[nombre de bd]
-EVALUACIONES_MONGO_CRUD_HTTPPORT=[puerto]
+EVALUACIONES_MONGO_CRUD_USER=[Usuario de BD]
+EVALUACIONES_MONGO_CRUD_PASS=[Contraseña del usuario de BD]
+EVALUACIONES_MONGO_CRUD_HOST=[URL, Dominio o EndPoint de la BD]
+EVALUACIONES_MONGO_CRUD_PGPORT=[Puerto de la BD]
+EVALUACIONES_MONGO_CRUD_BDNAME=[Nombre de Base de Datos]
+EVALUACIONES_MONGO_CRUD_AUTH_DB=[Nombre de Base de Datos de Autenticación]
+EVALUACIONES_MONGO_CRUD_HTTP_PORT=[Puerto de exposición del API]
 ```
-**NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con EVALUACIONES_MONGO_CRUD__...
+**NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con EVALUACIONES_MONGO_CRUD_...
 
 ### Ejecución del Proyecto
 ```shell
@@ -35,7 +37,7 @@ git pull origin develop && git checkout develop
 npm install
 
 # 5. Alimentar todas las variables de entorno que utiliza el proyecto.
-EVALUACIONES_MONGO_CRUD=8080 EVALUACIONES_MONGO_CRUD=127.0.0.1:27017 EVALUACIONES_MONGO_CRUD_SOME_VARIABLE=some_value nest run
+EVALUACIONES_MONGO_CRUD_HTTP_PORT=8080 EVALUACIONES_MONGO_CRUD_HOST=127.0.0.1:27017 EVALUACIONES_MONGO_CRUD_SOME_VARIABLE=some_value nest run
 ```
 ### Ejecución Dockerfile
 ```shell
@@ -70,6 +72,9 @@ Pruebas unitarias
 ```shell
 # En Proceso
 ```
+
+## Modelo de Datos
+[Modelo de Datos Parametros](/database/modelo_evaluaciones_mongo_crud.png)
 
 ## Estado CI
 
