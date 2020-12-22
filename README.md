@@ -15,8 +15,8 @@ API CRUD para la gestion de formatos de evaluación para las entidades de la uni
 EVALUACIONES_MONGO_CRUD_USER=[Usuario de BD]
 EVALUACIONES_MONGO_CRUD_PASS=[Contraseña del usuario de BD]
 EVALUACIONES_MONGO_CRUD_HOST=[URL, Dominio o EndPoint de la BD]
-EVALUACIONES_MONGO_CRUD_PGPORT=[Puerto de la BD]
-EVALUACIONES_MONGO_CRUD_BDNAME=[Nombre de Base de Datos]
+EVALUACIONES_MONGO_CRUD_PORT=[Puerto de la BD]
+EVALUACIONES_MONGO_CRUD_DB=[Nombre de Base de Datos]
 EVALUACIONES_MONGO_CRUD_AUTH_DB=[Nombre de Base de Datos de Autenticación]
 EVALUACIONES_MONGO_CRUD_HTTP_PORT=[Puerto de exposición del API]
 ```
