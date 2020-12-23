@@ -53,6 +53,7 @@ steps:
   commands:
   - npm i
   - npm run build
+  - ls
   when:
     branch:
     - develop
