@@ -6,6 +6,7 @@ workspace:
       - develop
       - release/*
       - master
+      - feature/*
 
 kind: pipeline
 name: oas_api_ci
@@ -47,6 +48,20 @@ steps:
     event:
     - push
 
+- name: nest_build
+  image: node:current-alpine
+  commands:
+  - npm i
+  - npm run build
+  when:
+    branch:
+    - develop
+    - release/*
+    - master
+    - feature/*
+    event:
+    - push
+
 # - name: run_sonar_scanner
 #   image: aosapps/drone-sonar-plugin
 #   settings:
@@ -72,6 +87,8 @@ steps:
   when:
     branch:
     - release/*
+    - feature/*
+    
     event:
     - push
 
