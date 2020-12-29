@@ -3,7 +3,8 @@ import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Seccion } from './schemas/seccion.schema';
 import { SeccionDto } from './dto/seccion.dto';
-
+import { FilterDto } from '../filters/dto/filter.dto';
+import { FiltersService } from '../filters/filters.service';
 
 
 
@@ -19,13 +20,32 @@ export class SeccionesService {
     return seccion.save();
   }
 
-  async getAll(): Promise<Seccion[]> {
-    return await this.seccionModel.find().populate("items_id").exec();//pendiente definir hasta donde se van a mostrar subdocumentos de determindada coleccion
+
+  async getAll(filterDto : FilterDto): Promise<Seccion[]> {
+    const filtersService = new FiltersService(filterDto);
+    if (filtersService.isPopulated()) {
+      return await this.seccionModel.find(filtersService.getQuery(), filtersService.getFields(), filtersService.getLimitAndOffset())
+        .populate("items_id")
+        .sort(filtersService.getSortBy())
+        .exec();
+    } else {
+      return await this.seccionModel.find(filtersService.getQuery(), filtersService.getFields(), filtersService.getLimitAndOffset())
+        .sort(filtersService.getSortBy())
+        .exec();
+    }    
   }
 
-  async getById(id: string): Promise<Seccion> {
+  async getById(id: string, populate: string): Promise<Seccion> {
     try {
-      return await this.seccionModel.findById(id).populate("items_id").exec();
+      if (populate === 'true') {
+        return await this.seccionModel.findById(id)
+          .populate("items_id")
+          .exec();  
+      } else {
+        return await this.seccionModel
+          .findById(id)
+          .exec();  
+      }      
     } catch (error) {
       return null;
     }
