@@ -10,10 +10,10 @@ export class Evaluacion extends Document {
   tipo_evaluacion_id: TipoEvaluacion;
 
   @Prop({ required: true })
-  nombre: String
+  nombre: String;
 
   @Prop()
-  descripcion: String
+  descripcion: String;
 
   @Prop(raw({}))
   estructura_evaluacion: Record<string, any>;
@@ -37,10 +37,10 @@ export class Evaluacion extends Document {
   respuestas_por_fecha: Record<string, any>[];
 
   @Prop()
-  fecha_creacion: Date
+  fecha_creacion: Date;
 
   @Prop()
-  fecha_modificacion: Date
+  fecha_modificacion: Date;
 };
 
 export const EvaluacionSchema = SchemaFactory.createForClass(Evaluacion);
