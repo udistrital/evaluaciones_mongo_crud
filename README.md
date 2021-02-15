@@ -6,19 +6,21 @@ API CRUD para la gestion de formatos de evaluación para las entidades de la uni
 
 ### Tecnologías Implementadas y Versiones
 * [NestJS](https://github.com/nestjs/nest)
+* [MongoDB](https://github.com/mongodb/mongo)
 * [Docker](https://docs.docker.com/engine/install/ubuntu/)
 * [Docker Compose](https://docs.docker.com/compose/)
 
 ### Variables de Entorno
 ```shell
-EVALUACIONES_MONGO_CRUD__USER=[usuario]
-EVALUACIONES_MONGO_CRUD__PASS=[password del usuario]
-EVALUACIONES_MONGO_CRUD__URLS=[url de bd]
-EVALUACIONES_MONGO_CRUD__RUNMODE=[modo de ejecución]
-EVALUACIONES_MONGO_CRUD__BDNAME=[nombre de bd]
-EVALUACIONES_MONGO_CRUD__HTTPPORT=[puerto]
+EVALUACIONES_MONGO_CRUD_USER=[Usuario de BD]
+EVALUACIONES_MONGO_CRUD_PASS=[Contraseña del usuario de BD]
+EVALUACIONES_MONGO_CRUD_HOST=[URL, Dominio o EndPoint de la BD]
+EVALUACIONES_MONGO_CRUD_PORT=[Puerto de la BD]
+EVALUACIONES_MONGO_CRUD_DB=[Nombre de Base de Datos]
+EVALUACIONES_MONGO_CRUD_AUTH_DB=[Nombre de Base de Datos de Autenticación]
+EVALUACIONES_MONGO_CRUD_HTTP_PORT=[Puerto de exposición del API]
 ```
-**NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con EVALUACIONES_MONGO_CRUD__...
+**NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con EVALUACIONES_MONGO_CRUD_...
 
 ### Ejecución del Proyecto
 ```shell
@@ -35,7 +37,7 @@ git pull origin develop && git checkout develop
 npm install
 
 # 5. Alimentar todas las variables de entorno que utiliza el proyecto.
-EVALUACIONES_MONGO_CRUD=8080 EVALUACIONES_MONGO_CRUD=127.0.0.1:27017 EVALUACIONES_MONGO_CRUD_SOME_VARIABLE=some_value nest run
+EVALUACIONES_MONGO_CRUD_HTTP_PORT=8080 EVALUACIONES_MONGO_CRUD_HOST=127.0.0.1:27017 EVALUACIONES_MONGO_CRUD_SOME_VARIABLE=some_value nest run
 ```
 ### Ejecución Dockerfile
 ```shell
@@ -72,15 +74,21 @@ Pruebas unitarias
 ```
 
 ## Modelo de Datos
-[Modelo de Datos Parametros](/sql/modelo_evaluacion_mongo_crud.png)
+[Modelo de Datos Parametros](/database/modelo_evaluaciones_mongo_crud.png)
+
+## Estado CI
+
+| Develop | Relese 0.0.1 | Master |
+| -- | -- | -- |
+| [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/evaluaciones_mongo_crud/status.svg?ref=refs/heads/develop)](https://hubci.portaloas.udistrital.edu.co/udistrital/evaluaciones_mongo_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/evaluaciones_mongo_crud/status.svg?ref=refs/heads/release/0.0.1)](https://hubci.portaloas.udistrital.edu.co/udistrital/evaluaciones_mongo_crud) |  [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/evaluaciones_mongo_crud/status.svg)](https://hubci.portaloas.udistrital.edu.co/udistrital/evaluaciones_mongo_crud) |
 
 
 ## Licencia
 
-This file is part of parametros_crud.
+This file is part of evaluaciones_mongo_crud.
 
 evaluaciones_mongo_crud is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 evaluaciones_mongo_crud is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License along with parametros_crud. If not, see https://www.gnu.org/licenses/.
+You should have received a copy of the GNU General Public License along with evaluaciones_mongo_crud. If not, see https://www.gnu.org/licenses/.

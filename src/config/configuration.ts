@@ -1,0 +1,9 @@
+export const environment =  {
+    USER: process.env.EVALUACIONES_MONGO_CRUD_USER,
+    PASS: process.env.EVALUACIONES_MONGO_CRUD_PASS,
+    HOST: process.env.EVALUACIONES_MONGO_CRUD_HOST,
+    PORT: process.env.EVALUACIONES_MONGO_CRUD_PORT,
+    DB: process.env.EVALUACIONES_MONGO_CRUD_DB,
+    HTTP_PORT: process.env.EVALUACIONES_MONGO_CRUD_HTTP_PORT,
+    AUTH_DB: process.env.EVALUACIONES_MONGO_CRUD_AUTH_DB
+};
